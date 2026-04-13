@@ -1,3 +1,16 @@
-baseURL = 'https://mfa-labs.github.io/'
+baseURL = 'https://mfa-labs.github.io/course-materials/'
 languageCode = 'en-us'
 title = 'Course Material'
+
+title = "Course Materials"
+theme = "docsy"
+
+contentDir = "content"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+[params]
+  github_repo = "https://github.com/mfa-labs/course-materials"
+  github_branch = "main"
+
+[menu]
