@@ -1,0 +1,25 @@
+baseURL = "https://example.com/"
+languageCode = "id-ID"
+title = "Materi Kuliah"
+relativeURLs = true
+canonifyURLs = false
+paginate = 0
+
+[params]
+  description = "Bahan ajar kuliah dengan Hugo dan deploy otomatis ke GitHub Pages"
+  author = "Dosen"
+
+[[menu.main]]
+  name = "Beranda"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Cloud Computing"
+  url = "/cloud-computing/"
+  weight = 2
+
+[[menu.main]]
+  name = "Machine Learning"
+  url = "/machine-learning/"
+  weight = 3

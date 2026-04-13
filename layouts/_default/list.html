@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <article class="page">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+
+  {{ if .IsHome }}
+    <section class="cards">
+      {{ range .Site.Sections }}
+        <article class="card">
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          {{ with .Summary }}<p>{{ . }}</p>{{ else }}<p>{{ .Site.Params.description }}</p>{{ end }}
+        </article>
+      {{ end }}
+    </section>
+  {{ else if .IsSection }}
+    <section class="cards">
+      {{ range .Sections }}
+        <article class="card">
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        </article>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}
