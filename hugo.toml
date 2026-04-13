@@ -1,6 +1,5 @@
 baseURL = 'https://mfa-labs.github.io/course-materials/'
 languageCode = 'en-us'
-title = 'Course Material'
 
 title = "Course Materials"
 theme = "docsy"
