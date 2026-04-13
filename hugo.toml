@@ -2,7 +2,7 @@ baseURL = 'https://mfa-labs.github.io/course-materials/'
 languageCode = 'en-us'
 
 title = "Course Materials"
-theme = "docsy"
+theme = "hugo-book"
 
 contentDir = "content"
 defaultContentLanguage = "en"
