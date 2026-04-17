@@ -10,7 +10,7 @@ This repository contains course materials for multiple classes, not just web dev
 ### Personal Learning Usage
 - These resources can also be used by individuals seeking to enhance their knowledge and skills independently.
 
-## Repository Composition
-- CSS: 51.3%
-- HTML: 48.4%
-- JavaScript: 0.3%
+## Available Courses
+
+- 📚 Cloud Computing
+- 🤖 Machine Learning
