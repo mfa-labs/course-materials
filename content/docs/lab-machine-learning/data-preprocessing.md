@@ -11,16 +11,6 @@ module: "Data Preprocessing"
 semester: 6
 credits: 3 SKS
 
-# Capaian Pembelajaran
-
-cpmk:
-
-* "Mampu memahami konsep dasar data preprocessing"
-* "Mampu melakukan data cleaning"
-* "Mampu melakukan encoding data kategorikal"
-* "Mampu menerapkan feature scaling"
-* "Mampu membangun pipeline preprocessing"
-
 ---
 # Praktikum Data Preprocessing
 
