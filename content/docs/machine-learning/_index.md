@@ -18,47 +18,37 @@ Mata kuliah Machine Learning ini dirancang berdasarkan Outcome-Based Education (
 ## Hasil Pembelajaran Kursus (Course Learning Outcomes - CLO)
 Setelah menyelesaikan kursus ini, mahasiswa akan mampu:
 
-### CLO 1: Memahami Konsep Dasar Machine Learning
-- Menjelaskan definisi dan jenis-jenis machine learning
-- Mengidentifikasi komponen utama dalam workflow ML
-- Memahami perbedaan antara AI, ML, dan deep learning
+### CLO 1 – Konsep Dasar Machine Learning
+Menjelaskan konsep, terminologi, dan jenis-jenis machine learning serta membedakan AI, machine learning, dan deep learning dalam konteks penerapan.
 
-### CLO 2: Menguasai Teknik Data Preprocessing
-- Melakukan pembersihan dan transformasi data
-- Mengimplementasikan feature engineering
-- Menangani data tidak seimbang dan missing values
+### CLO 2 - Data Preprocessing
+Menerapkan teknik data preprocessing meliputi data cleaning, transformasi, feature engineering, serta penanganan missing values dan imbalanced data.
 
-### CLO 3: Mengimplementasikan Algoritma Supervised Learning
-- Menerapkan algoritma regresi dan klasifikasi
-- Mengevaluasi performa model menggunakan metrik yang tepat
-- Melakukan hyperparameter tuning dan model selection
+### CLO 3 – Supervised Learning
+Membangun dan mengevaluasi model supervised learning (regresi dan klasifikasi) menggunakan metrik evaluasi yang tepat serta melakukan optimasi model.
 
-### CLO 4: Mengimplementasikan Algoritma Unsupervised Learning
-- Menerapkan teknik clustering dan dimensionality reduction
-- Menginterpretasikan hasil unsupervised learning
-- Memilih algoritma yang sesuai untuk berbagai kasus
+### CLO 4 – Unsupervised Learning
+Menerapkan algoritma unsupervised learning (clustering dan dimensionality reduction) serta menginterpretasikan hasilnya untuk analisis data.
 
-### CLO 5: Mengembangkan Model Neural Network
-- Memahami arsitektur neural network
-- Mengimplementasikan deep learning menggunakan framework populer
-- Mengoptimalkan model neural network
+### CLO 5 – Neural Network & Deep Learning
+Mengembangkan model neural network menggunakan framework machine learning serta melakukan optimasi performa model.
 
-### CLO 6: Menerapkan Machine Learning dalam Proyek Nyata
-- Menganalisis masalah bisnis dan merancang solusi ML
-- Mengimplementasikan end-to-end ML pipeline
-- Mengevaluasi dampak etis dan sosial dari penerapan ML
+### CLO 6 – Proyek Machine Learning
+Merancang dan mengimplementasikan solusi machine learning berbasis kasus nyata secara end-to-end dengan mempertimbangkan aspek etika dan dampak sosial.
 
 ## Struktur Kursus
-Kursus ini terdiri dari 14 minggu dengan pembagian sebagai berikut:
+Kursus ini terdiri dari 16 minggu dengan pembagian sebagai berikut:
 
 | Minggu | Topik | CLO |
 |--------|-------|-----|
 | 1-2 | Pengantar dan Workflow ML | CLO 1 |
 | 3-4 | Data Preprocessing | CLO 2 |
 | 5-7 | Supervised Learning | CLO 3 |
-| 8-9 | Unsupervised Learning | CLO 4 |
-| 10-12 | Neural Networks & Deep Learning | CLO 5 |
-| 13-14 | Proyek dan Etika ML | CLO 6 |
+| 8 | UTS | Evaluasi |
+| 9-10 | Unsupervised Learning | CLO 4 |
+| 11-12 | Neural Networks & Deep Learning | CLO 5 |
+| 13-15 | Proyek dan Etika ML | CLO 6 |
+| 16 | UAS | Evaluasi |
 
 ## Metode Pembelajaran
 - Kuliah interaktif
