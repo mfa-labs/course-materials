@@ -1,8 +1,3 @@
----
-title: "Machine Learning"
-linkTitle: "Machine Learning"
----
-
 # Course Overview and Learning Outcomes
 
 ## Deskripsi Mata Kuliah
