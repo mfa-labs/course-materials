@@ -2,7 +2,6 @@
 title: "Introduction to Machine Learning"
 date: 2026-04-13
 draft: false
-weight: 1
 ---
 
 # Introduction to Machine Learning

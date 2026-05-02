@@ -2,7 +2,6 @@
 title: "Model Evaluation and Deployment"
 date: 2026-04-13
 draft: false
-weight: 6
 ---
 
 # Model Evaluation and Deployment
