@@ -1,10 +1,3 @@
----
-title: "Model Evaluation and Deployment"
-date: 2026-04-13
-draft: false
-weight: 8
----
-
 # Model Evaluation and Deployment
 
 ## Deskripsi Modul

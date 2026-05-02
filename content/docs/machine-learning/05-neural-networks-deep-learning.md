@@ -1,10 +1,3 @@
----
-title: "Neural Networks and Deep Learning"
-date: 2026-04-13
-draft: false
-weight: 5
----
-
 # Neural Networks and Deep Learning
 
 ## Deskripsi Modul

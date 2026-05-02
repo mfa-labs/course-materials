@@ -1,9 +1,3 @@
----
-title: "Data"
-date: 2026-05-02
-draft: false
-weight: 3
----
 # Jenis Data dalam Machine Learning
 
 ## Pendahuluan
