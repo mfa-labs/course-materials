@@ -2,6 +2,7 @@
 title: "Final Project: End-to-End Machine Learning"
 date: 2026-04-13
 draft: false
+weight: 10
 ---
 
 # Final Project: End-to-End Machine Learning

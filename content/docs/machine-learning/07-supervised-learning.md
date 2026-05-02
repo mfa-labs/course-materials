@@ -2,6 +2,7 @@
 title: "Supervised Learning"
 date: 2026-04-13
 draft: false
+weight: 7
 ---
 
 # Supervised Learning

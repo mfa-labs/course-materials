@@ -1,7 +1,6 @@
 ---
 title: "Machine Learning"
 linkTitle: "Machine Learning"
-weight: 1
 ---
 
 # Course Overview and Learning Outcomes

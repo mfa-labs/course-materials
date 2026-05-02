@@ -2,6 +2,7 @@
 title: "Ethics and Future of Machine Learning"
 date: 2026-04-13
 draft: false
+weight: 9
 ---
 
 # Ethics and Future of Machine Learning
