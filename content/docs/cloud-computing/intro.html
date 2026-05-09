@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bahan Ajar Cloud Computing — Pertemuan 1</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-family: system-ui, sans-serif;
+				background: #fff;
+				color: #1a1a1a;
+				padding: 2rem;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			.deck {
+				width: 100%;
+			}
+			.slide {
+				display: none;
+				padding: 1.5rem 0;
+			}
+			.slide.active {
+				display: block;
+			}
+			.progress-bar {
+				width: 100%;
+				height: 4px;
+				background: #e5e5e5;
+				border-radius: 2px;
+				margin-bottom: 1.5rem;
+			}
+			.progress-fill {
+				height: 4px;
+				background: #1d9e75;
+				border-radius: 2px;
+				transition: width 0.3s ease;
+			}
+			.slide-meta {
+				font-size: 12px;
+				color: #888;
+				margin-bottom: 0.5rem;
+				letter-spacing: 0.05em;
+			}
+			.slide-title {
+				font-size: 22px;
+				font-weight: 500;
+				color: #1a1a1a;
+				margin-bottom: 1rem;
+				line-height: 1.3;
+			}
+			.slide-subtitle {
+				font-size: 15px;
+				color: #555;
+				margin-bottom: 1.5rem;
+				line-height: 1.6;
+			}
+			.card-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+				gap: 10px;
+				margin: 1rem 0;
+			}
+			.card {
+				background: #f5f5f5;
+				border-radius: 8px;
+				padding: 1rem;
+			}
+			.card-icon {
+				font-size: 22px;
+				margin-bottom: 8px;
+			}
+			.card-label {
+				font-size: 13px;
+				font-weight: 500;
+				color: #1a1a1a;
+				margin-bottom: 4px;
+			}
+			.card-desc {
+				font-size: 12px;
+				color: #555;
+				line-height: 1.5;
+			}
+			.compare-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 10px;
+				margin: 1rem 0;
+			}
+			.compare-card {
+				background: #f5f5f5;
+				border-radius: 8px;
+				padding: 1rem;
+			}
+			.compare-head {
+				font-size: 13px;
+				font-weight: 500;
+				color: #555;
+				margin-bottom: 8px;
+			}
+			.compare-item {
+				font-size: 13px;
+				color: #1a1a1a;
+				padding: 5px 0;
+				border-bottom: 0.5px solid #ddd;
+				line-height: 1.4;
+			}
+			.compare-item:last-child {
+				border-bottom: none;
+			}
+			.highlight-box {
+				border-left: 3px solid #1d9e75;
+				padding: 0.75rem 1rem;
+				background: #f5f5f5;
+				border-radius: 0 8px 8px 0;
+				margin: 1rem 0;
+			}
+			.highlight-box p {
+				font-size: 14px;
+				color: #1a1a1a;
+				line-height: 1.6;
+			}
+			.timeline {
+				margin: 1rem 0;
+			}
+			.tl-item {
+				display: flex;
+				gap: 12px;
+				margin-bottom: 14px;
+				align-items: flex-start;
+			}
+			.tl-dot {
+				width: 28px;
+				height: 28px;
+				min-width: 28px;
+				border-radius: 50%;
+				background: #e1f5ee;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 11px;
+				font-weight: 500;
+				color: #0f6e56;
+			}
+			.tl-content {
+				flex: 1;
+			}
+			.tl-year {
+				font-size: 11px;
+				color: #888;
+				margin-bottom: 2px;
+			}
+			.tl-text {
+				font-size: 13px;
+				color: #1a1a1a;
+				line-height: 1.5;
+			}
+			.discussion-box {
+				border: 0.5px solid #ccc;
+				border-radius: 12px;
+				padding: 1.25rem;
+				margin: 1rem 0;
+			}
+			.discussion-q {
+				font-size: 14px;
+				color: #1a1a1a;
+				line-height: 1.6;
+				margin-bottom: 10px;
+			}
+			.ask-btn {
+				font-size: 13px;
+				padding: 8px 16px;
+				border-radius: 8px;
+				border: 0.5px solid #ccc;
+				background: transparent;
+				color: #1a1a1a;
+				cursor: pointer;
+				margin-right: 8px;
+				margin-top: 4px;
+			}
+			.ask-btn:hover {
+				background: #f5f5f5;
+			}
+			.sector-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+				gap: 8px;
+				margin: 1rem 0;
+			}
+			.sector-card {
+				background: #f5f5f5;
+				border-radius: 8px;
+				padding: 0.75rem;
+				text-align: center;
+			}
+			.sector-icon {
+				font-size: 20px;
+				margin-bottom: 6px;
+			}
+			.sector-name {
+				font-size: 12px;
+				font-weight: 500;
+				color: #1a1a1a;
+				margin-bottom: 3px;
+			}
+			.sector-ex {
+				font-size: 11px;
+				color: #555;
+			}
+			.summary-list {
+				list-style: none;
+				margin: 1rem 0;
+			}
+			.summary-list li {
+				display: flex;
+				gap: 10px;
+				padding: 8px 0;
+				border-bottom: 0.5px solid #e5e5e5;
+				font-size: 14px;
+				color: #1a1a1a;
+				line-height: 1.5;
+				align-items: flex-start;
+			}
+			.summary-list li:last-child {
+				border-bottom: none;
+			}
+			.check {
+				color: #1d9e75;
+				font-size: 14px;
+				margin-top: 2px;
+				min-width: 16px;
+			}
+			.nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 1.5rem;
+				padding-top: 1rem;
+				border-top: 0.5px solid #e5e5e5;
+			}
+			.nav-btn {
+				font-size: 13px;
+				padding: 8px 18px;
+				border-radius: 8px;
+				border: 0.5px solid #ccc;
+				background: transparent;
+				color: #1a1a1a;
+				cursor: pointer;
+			}
+			.nav-btn:hover {
+				background: #f5f5f5;
+			}
+			.nav-btn:disabled {
+				opacity: 0.3;
+				cursor: default;
+			}
+			.nav-btn.primary {
+				background: #1d9e75;
+				color: white;
+				border-color: #1d9e75;
+			}
+			.nav-btn.primary:hover {
+				background: #0f6e56;
+				border-color: #0f6e56;
+			}
+			.slide-counter {
+				font-size: 13px;
+				color: #888;
+			}
+			.timer-badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 5px;
+				font-size: 11px;
+				color: #0f6e56;
+				background: #e1f5ee;
+				padding: 3px 10px;
+				border-radius: 20px;
+				margin-bottom: 1rem;
+			}
+			.two-col {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 12px;
+				margin: 1rem 0;
+			}
+			.stat-block {
+				text-align: center;
+				padding: 1rem;
+				background: #f5f5f5;
+				border-radius: 8px;
+			}
+			.stat-num {
+				font-size: 24px;
+				font-weight: 500;
+				color: #1d9e75;
+			}
+			.stat-label {
+				font-size: 12px;
+				color: #555;
+				margin-top: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="deck">
+			<div class="progress-bar"
+				><div class="progress-fill" id="prog" style="width: 14%"></div
+			></div>
+
+			<!-- Slide 1: Pembuka -->
+			<div class="slide active" id="s1">
+				<div class="slide-meta"
+					>Pertemuan 1 · Cloud Computing IFR225</div
+				>
+				<div class="timer-badge">⏱ ~30 menit · 7 topik</div>
+				<div class="slide-title">Apa itu Cloud Computing?</div>
+				<div class="slide-subtitle"
+					>Dari server fisik di ruang server kantor, hingga
+					infrastruktur yang bisa Anda kelola dari browser dalam
+					hitungan menit.</div
+				>
+				<div class="card-grid">
+					<div class="card">
+						<div class="card-icon">🎯</div>
+						<div class="card-label">Tujuan hari ini</div>
+						<div class="card-desc"
+							>Memahami apa itu cloud, mengapa relevan, dan
+							bagaimana industri menggunakannya</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-icon">👥</div>
+						<div class="card-label">Metode</div>
+						<div class="card-desc"
+							>Diskusi interaktif + sharing pengalaman dari tempat
+							kerja masing-masing</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-icon">📝</div>
+						<div class="card-label">Penilaian</div>
+						<div class="card-desc"
+							>Partisipasi aktif dan kemampuan mengaitkan materi
+							dengan konteks kerja</div
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 2: Definisi -->
+			<div class="slide" id="s2">
+				<div class="slide-meta">Topik 1 · Definisi</div>
+				<div class="slide-title">Definisi cloud computing</div>
+				<div class="highlight-box">
+					<p
+						>NIST mendefinisikan cloud computing sebagai model yang
+						memungkinkan akses jaringan yang nyaman dan sesuai
+						permintaan ke kumpulan sumber daya komputasi yang dapat
+						dikonfigurasi — seperti jaringan, server, penyimpanan,
+						aplikasi, dan layanan — yang dapat dengan cepat
+						disediakan dan dirilis dengan usaha manajemen
+						minimal.</p
+					>
+				</div>
+				<div class="slide-subtitle"
+					>Sederhananya:
+					<strong
+						>sewa infrastruktur IT lewat internet, bayar sesuai
+						pemakaian.</strong
+					></div
+				>
+				<div class="card-grid">
+					<div class="card">
+						<div class="card-label">On-demand</div>
+						<div class="card-desc"
+							>Tersedia kapanpun dibutuhkan, tanpa perlu menunggu
+							pengadaan hardware</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-label">Elastis</div>
+						<div class="card-desc"
+							>Bisa ditambah atau dikurangi kapasitasnya sesuai
+							kebutuhan saat itu</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-label">Pay-as-you-go</div>
+						<div class="card-desc"
+							>Bayar hanya untuk yang digunakan, seperti tagihan
+							listrik</div
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 3: Sejarah -->
+			<div class="slide" id="s3">
+				<div class="slide-meta">Topik 2 · Sejarah</div>
+				<div class="slide-title"
+					>Perjalanan singkat cloud computing</div
+				>
+				<div class="timeline">
+					<div class="tl-item">
+						<div class="tl-dot">60an</div>
+						<div class="tl-content">
+							<div class="tl-year">1960-an</div>
+							<div class="tl-text"
+								>John McCarthy menggagas "computing as a
+								utility" — komputasi seperti listrik, bisa
+								dinikmati banyak orang sekaligus</div
+							>
+						</div>
+					</div>
+					<div class="tl-item">
+						<div class="tl-dot">99</div>
+						<div class="tl-content">
+							<div class="tl-year">1999</div>
+							<div class="tl-text"
+								>Salesforce meluncurkan aplikasi bisnis lewat
+								internet — cikal bakal SaaS modern</div
+							>
+						</div>
+					</div>
+					<div class="tl-item">
+						<div class="tl-dot">06</div>
+						<div class="tl-content">
+							<div class="tl-year">2006</div>
+							<div class="tl-text"
+								>Amazon Web Services (AWS) lahir. EC2 dan S3
+								menjadi layanan cloud komersial pertama yang
+								masif</div
+							>
+						</div>
+					</div>
+					<div class="tl-item">
+						<div class="tl-dot">10+</div>
+						<div class="tl-content">
+							<div class="tl-year">2010-sekarang</div>
+							<div class="tl-text"
+								>Google Cloud, Microsoft Azure, Alibaba Cloud
+								menyusul. Cloud menjadi backbone industri
+								global</div
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 4: On-premise vs Cloud -->
+			<div class="slide" id="s4">
+				<div class="slide-meta">Topik 3 · Perbandingan</div>
+				<div class="slide-title">On-premise vs cloud</div>
+				<div class="compare-row">
+					<div class="compare-card">
+						<div class="compare-head"
+							>🏢 On-premise (tradisional)</div
+						>
+						<div class="compare-item"
+							>Beli & kelola hardware sendiri</div
+						>
+						<div class="compare-item">Biaya awal besar (CAPEX)</div>
+						<div class="compare-item"
+							>Kapasitas tetap, sulit ditambah cepat</div
+						>
+						<div class="compare-item"
+							>Tim IT internal wajib ada</div
+						>
+						<div class="compare-item">Kontrol penuh atas data</div>
+					</div>
+					<div class="compare-card" style="border: 0.5px solid #aaa">
+						<div class="compare-head" style="color: #0f6e56"
+							>☁️ Cloud</div
+						>
+						<div class="compare-item"
+							>Sewa infrastruktur dari penyedia</div
+						>
+						<div class="compare-item"
+							>Biaya operasional (OPEX), fleksibel</div
+						>
+						<div class="compare-item"
+							>Skalabel dalam hitungan menit</div
+						>
+						<div class="compare-item"
+							>Pemeliharaan ditangani penyedia</div
+						>
+						<div class="compare-item"
+							>Data di server pihak ketiga</div
+						>
+					</div>
+				</div>
+				<div class="highlight-box">
+					<p
+						>Tidak semua perusahaan harus full cloud. Banyak yang
+						memilih hybrid — sebagian tetap on-premise, sebagian
+						pindah ke cloud sesuai kebutuhan dan regulasi.</p
+					>
+				</div>
+			</div>
+
+			<!-- Slide 5: Pemain utama -->
+			<div class="slide" id="s5">
+				<div class="slide-meta">Topik 4 · Ekosistem industri</div>
+				<div class="slide-title"
+					>Ekosistem cloud global & Indonesia</div
+				>
+				<div class="two-col">
+					<div class="stat-block">
+						<div class="stat-num">$679M</div>
+						<div class="stat-label"
+							>Nilai pasar cloud Indonesia 2023</div
+						>
+					</div>
+					<div class="stat-block">
+						<div class="stat-num">3 besar</div>
+						<div class="stat-label"
+							>AWS, Azure, GCP kuasai ~65% pasar global</div
+						>
+					</div>
+				</div>
+				<div class="card-grid">
+					<div class="card">
+						<div class="card-icon">🟠</div>
+						<div class="card-label">Amazon Web Services</div>
+						<div class="card-desc"
+							>Terbesar, paling lengkap. Dipakai Tokopedia, Gojek,
+							banyak bank</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-icon">🔵</div>
+						<div class="card-label">Microsoft Azure</div>
+						<div class="card-desc"
+							>Kuat di enterprise & integrasi Microsoft 365.
+							Banyak dipakai korporat Indonesia</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-icon">🔴</div>
+						<div class="card-label">Google Cloud</div>
+						<div class="card-desc"
+							>Unggul di AI/ML dan data analytics. Dipakai startup
+							teknologi</div
+						>
+					</div>
+					<div class="card">
+						<div class="card-icon">🇮🇩</div>
+						<div class="card-label"
+							>Lokal: Telkom, Alibaba ID, BiznetGio</div
+						>
+						<div class="card-desc"
+							>Telkom NeutraCDC, Alibaba Cloud ID — opsi untuk
+							data residency lokal</div
+						>
+					</div>
+				</div>
+			</div>
+
+			<!-- Slide 6: Adopsi per sektor -->
+			<div class="slide" id="s6">
+				<div class="slide-meta">Topik 5 · Adopsi di industri</div>
+				<div class="slide-title"
+					>Cloud di berbagai sektor industri Indonesia</div
+				>
+				<div class="sector-grid">
+					<div class="sector-card">
+						<div class="sector-icon">🏦</div>
+						<div class="sector-name">Perbankan</div>
+						<div class="sector-ex"
+							>Core banking hybrid, digital banking</div
+						>
+					</div>
+					<div class="sector-card">
+						<div class="sector-icon">🛒</div>
+						<div class="sector-name">E-commerce</div>
+						<div class="sector-ex"
+							>Auto-scale saat Harbolnas, flash sale</div
+						>
+					</div>
+					<div class="sector-card">
+						<div class="sector-icon">🏥</div>
+						<div class="sector-name">Kesehatan</div>
+						<div class="sector-ex"
+							>Rekam medis elektronik, telemedicine</div
+						>
+					</div>
+					<div class="sector-card">
+						<div class="sector-icon">🏛️</div>
+						<div class="sector-name">Pemerintahan</div>
+						<div class="sector-ex"
+							>SPBE, Govtech, PDNS nasional</div
+						>
+					</div>
+					<div class="sector-card">
+						<div class="sector-icon">📚</div>
+						<div class="sector-name">Pendidikan</div>
+						<div class="sector-ex"
+							>LMS, platform belajar online</div
+						>
+					</div>
+					<div class="sector-card">
+						<div class="sector-icon">🏭</div>
+						<div class="sector-name">Manufaktur</div>
+						<div class="sector-ex"
+							>IoT, supply chain, predictive maintenance</div
+						>
+					</div>
+				</div>
+				<div class="highlight-box">
+					<p
+						>Insiden PDNS 2024 menjadi pelajaran penting tentang
+						pentingnya backup, redundansi, dan tata kelola data di
+						cloud pemerintah.</p
+					>
+				</div>
+			</div>
+
+			<!-- Slide 7: Diskusi -->
+			<div class="slide" id="s7">
+				<div class="slide-meta">Topik 6 · Diskusi kelas</div>
+				<div class="slide-title"
+					>Diskusi: cloud di tempat kerja Anda</div
+				>
+				<div class="slide-subtitle"
+					>Bagikan pengalaman Anda — tidak ada jawaban salah. Setiap
+					konteks berbeda.</div
+				>
+				<div class="discussion-box">
+					<div class="discussion-q">🗣 Pertanyaan diskusi:</div>
+					<ul
+						style="
+							padding-left: 1.2rem;
+							font-size: 14px;
+							color: #1a1a1a;
+							line-height: 2;
+						"
+					>
+						<li
+							>Apakah perusahaan tempat Anda bekerja sudah
+							menggunakan cloud? Layanan apa?</li
+						>
+						<li
+							>Apa tantangan IT terbesar yang pernah Anda hadapi —
+							apakah cloud bisa jadi solusinya?</li
+						>
+						<li
+							>Adakah kekhawatiran tentang keamanan atau privasi
+							data jika pindah ke cloud?</li
+						>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Slide 8: Ringkasan -->
+			<div class="slide" id="s8">
+				<div class="slide-meta">Penutup · Ringkasan pertemuan 1</div>
+				<div class="slide-title">Yang kita pelajari hari ini</div>
+				<ul class="summary-list">
+					<li
+						><span class="check">✓</span> Cloud adalah model
+						komputasi on-demand, elastis, dan berbasis konsumsi</li
+					>
+					<li
+						><span class="check">✓</span> Evolusi dari mainframe era
+						60an hingga hyperscaler modern AWS, Azure, GCP</li
+					>
+					<li
+						><span class="check">✓</span> On-premise cocok untuk
+						kontrol penuh; cloud unggul dalam fleksibilitas dan
+						kecepatan</li
+					>
+					<li
+						><span class="check">✓</span> AWS, Azure, GCP adalah
+						pemain utama; ada opsi lokal untuk kepatuhan
+						regulasi</li
+					>
+					<li
+						><span class="check">✓</span> Adopsi cloud sudah masif
+						di perbankan, e-commerce, kesehatan, dan pemerintahan
+						Indonesia</li
+					>
+				</ul>
+				<div class="highlight-box" style="margin-top: 1.25rem">
+					<p
+						>Pertemuan berikutnya: kita akan bedah model layanan
+						IaaS, PaaS, SaaS — dan Anda akan mulai bisa
+						mengklasifikasikan layanan yang sudah digunakan
+						sehari-hari di tempat kerja.</p
+					>
+				</div>
+			</div>
+
+			<!-- Navigation -->
+			<div class="nav">
+				<button
+					class="nav-btn"
+					id="prevBtn"
+					onclick="navigate(-1)"
+					disabled
+					>← Sebelumnya</button
+				>
+				<span class="slide-counter" id="counter">1 / 8</span>
+				<button
+					class="nav-btn primary"
+					id="nextBtn"
+					onclick="navigate(1)"
+					>Selanjutnya →</button
+				>
+			</div>
+		</div>
+
+		<script>
+			let cur = 1
+			const total = 8
+			function navigate(dir) {
+				document.getElementById('s' + cur).classList.remove('active')
+				cur += dir
+				document.getElementById('s' + cur).classList.add('active')
+				document.getElementById('counter').textContent =
+					cur + ' / ' + total
+				document.getElementById('prog').style.width =
+					Math.round((cur / total) * 100) + '%'
+				document.getElementById('prevBtn').disabled = cur === 1
+				document.getElementById('nextBtn').disabled = cur === total
+				document.getElementById('nextBtn').textContent =
+					cur === total ? 'Selesai ✓' : 'Selanjutnya →'
+			}
+		</script>
+	</body>
+</html>
